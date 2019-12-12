@@ -3,6 +3,7 @@ import { configure, addDecorator } from '@storybook/react';
 import GlobalStyles from '../src/GlobalStyles';
 import { ThemeProvider } from 'emotion-theming';
 import light from '../src/themes/light';
+import { withKnobs } from '@storybook/addon-knobs';
 
 // add GlobalStyle for every story
 const GlobalStyleDecorator = storyFn => (
@@ -12,6 +13,7 @@ const GlobalStyleDecorator = storyFn => (
   </ThemeProvider>
 );
 addDecorator(GlobalStyleDecorator);
+addDecorator(withKnobs);
 
 // automatically import all files ending in *.stories.js
 configure(require.context('../src/stories', true, /\.stories\.js$/), module);
