@@ -1,0 +1,27 @@
+{
+  "name": "pensionhalstrup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-client": "cd client && npm run build",
+    "client": "cd client && npm start",
+    "test": "cd client && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmachens/pensionhalstrup.git"
+  },
+  "keywords": [],
+  "author": "Leon Machens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmachens/pensionhalstrup/issues"
+  },
+  "homepage": "https://github.com/lmachens/pensionhalstrup#readme",
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-plugin-react": "^7.17.0",
+    "prettier": "^1.19.1"
+  }
+}
