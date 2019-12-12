@@ -14,7 +14,7 @@ const settings = {
 const SliderStyled = styled(Slider)``;
 const ImgContainer = styled.div`
   height: 500px;
-  background: #000;
+  background: beige;
 `;
 
 const Img = styled.img`

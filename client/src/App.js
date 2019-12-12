@@ -24,20 +24,20 @@ const Main = styled.main`
   margin-top: 10px;
 `;
 
-const roomImages = [
-  {
-    src: '/images/dsc_0002.jpg',
-    alt: 'Doppelzimmer'
-  },
-  {
-    src: '/images/dsc_0003.jpg',
-    alt: 'Doppelzimmer'
-  }
-];
-
 function App() {
   const [nights, setNights] = React.useState(1);
   const [rooms, setRooms] = React.useState([]);
+  const [roomImages, setRoomImages] = React.useState(null);
+
+  React.useEffect(() => {
+    async function fetchImages() {
+      const response = await fetch('/api/images');
+      const images = await response.json();
+      setRoomImages(images);
+    }
+
+    fetchImages();
+  }, []);
 
   function handleRoomChange(room) {
     const existingRoomIndex = rooms.indexOf(room);
@@ -58,7 +58,7 @@ function App() {
           <Logo />
         </Header>
         <Main>
-          <Gallery images={roomImages} />
+          <Gallery images={roomImages || []} />
           <h2>Angebote</h2>
           <h3>Nächte</h3>
           <NightsInput value={nights} onChange={setNights} />
