@@ -1,7 +1,14 @@
 import React from 'react';
+import Logo from './components/Logo';
 
 function App() {
-  return <div>App</div>;
+  return (
+    <div>
+      <header>
+        <Logo />
+      </header>
+    </div>
+  );
 }
 
 export default App;
