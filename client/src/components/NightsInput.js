@@ -1,25 +1,18 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-
-const Button = styled.button`
-  background: ${props => (props.active ? props.theme.colors.primary : '#fff')};
-  height: 40px;
-  width: 40px;
-  font-size: 1.1rem;
-`;
+import StatusButton from './StatusButton';
 
 function NightsInput({ value, onChange }) {
   return (
     <div>
       {['1', '2', '3', '4', '5', '6', '7+'].map(nights => (
-        <Button
+        <StatusButton
           key={nights}
           active={value === parseInt(nights)}
           onClick={() => onChange(parseInt(nights))}
         >
           {nights}
-        </Button>
+        </StatusButton>
       ))}
     </div>
   );
