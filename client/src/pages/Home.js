@@ -3,6 +3,7 @@ import Gallery from '../components/Gallery';
 import NightsInput from '../components/NightsInput';
 import RoomInput from '../components/RoomInput';
 import Price from '../components/Price';
+import Description from '../components/Description';
 
 function Home() {
   const [nights, setNights] = React.useState(1);
@@ -40,6 +41,8 @@ function Home() {
       <RoomInput value={rooms} onChange={handleRoomChange} />
       <h3>Preis</h3>
       <Price rooms={rooms} nights={nights} />
+      <h3>Beschreibung</h3>
+      <Description />
     </>
   );
 }
