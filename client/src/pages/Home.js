@@ -4,6 +4,7 @@ import NightsInput from '../components/NightsInput';
 import RoomInput from '../components/RoomInput';
 import Price from '../components/Price';
 import Description from '../components/Description';
+import Contact from '../components/Contact';
 
 function Home() {
   const [nights, setNights] = React.useState(1);
@@ -43,6 +44,8 @@ function Home() {
       <Price rooms={rooms} nights={nights} />
       <h3>Beschreibung</h3>
       <Description />
+      <h3>Kontakt</h3>
+      <Contact />
     </>
   );
 }
