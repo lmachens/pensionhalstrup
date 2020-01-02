@@ -7,21 +7,12 @@ import Description from '../components/Description';
 import Contact from '../components/Contact';
 import Map from '../components/Map';
 import { useSessionStorage } from '../hooks/useStorage';
+import useFetch from '../hooks/useFetch';
 
 function Home() {
   const [nights, setNights] = useSessionStorage('nights', 1);
   const [rooms, setRooms] = useSessionStorage('rooms', []);
-  const [roomImages, setRoomImages] = React.useState(null);
-
-  React.useEffect(() => {
-    async function fetchImages() {
-      const response = await fetch('/api/images');
-      const images = await response.json();
-      setRoomImages(images);
-    }
-
-    fetchImages();
-  }, []);
+  const roomImages = useFetch('/api/images');
 
   function handleRoomChange(room) {
     const existingRoomIndex = rooms.indexOf(room);
