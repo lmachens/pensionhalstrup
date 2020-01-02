@@ -6,10 +6,11 @@ import Price from '../components/Price';
 import Description from '../components/Description';
 import Contact from '../components/Contact';
 import Map from '../components/Map';
+import { useSessionStorage } from '../hooks/useStorage';
 
 function Home() {
-  const [nights, setNights] = React.useState(1);
-  const [rooms, setRooms] = React.useState([]);
+  const [nights, setNights] = useSessionStorage('nights', 1);
+  const [rooms, setRooms] = useSessionStorage('rooms', []);
   const [roomImages, setRoomImages] = React.useState(null);
 
   React.useEffect(() => {
