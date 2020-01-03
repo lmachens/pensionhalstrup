@@ -6,6 +6,17 @@
       "src": "package.json",
       "use": "@now/static-build",
       "config": { "distDir": "client/storybook-static" }
+    },
+    { "src": "server.js", "use": "@now/node-server" }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/server.js"
     }
-  ]
+  ],
+  "env": {
+    "MONGO_URL": "@pension_halstrup_mongo_url",
+    "DB_NAME": "@pension_halstrup_db_name"
+  }
 }
