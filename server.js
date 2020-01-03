@@ -11,9 +11,6 @@ app.get('/api/images', async (request, response) => {
   response.json(images);
 });
 
-// Server storybook
-app.use('/storybook', express.static(path.join(__dirname, 'client/storybook-static')));
-
 // Serve any static files
 app.use(express.static(path.join(__dirname, 'client/build')));
 
