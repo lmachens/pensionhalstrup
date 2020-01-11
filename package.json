@@ -13,7 +13,7 @@
     "storybook": "cd client && npm run storybook",
     "test": "cd client && npm test",
     "postinstall": "cd client && npm install",
-    "start": "npm run json-server"
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",
