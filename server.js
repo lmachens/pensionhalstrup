@@ -21,7 +21,7 @@ app.get('*', function(req, res) {
 
 initDb(process.env.MONGO_URL, process.env.DB_NAME).then(() => {
   console.log('DB initialized');
-  app.listen(8080, () => {
-    console.log('Server ready on http://localhost:8080');
+  app.listen(process.env.PORT, () => {
+    console.log(`Server ready on http://localhost:${process.env.PORT}`);
   });
 });
