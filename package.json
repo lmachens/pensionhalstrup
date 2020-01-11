@@ -12,7 +12,7 @@
     "storybook": "cd client && npm run storybook",
     "test": "cd client && npm test",
     "postinstall": "cd client && npm install",
-    "start": "json-server --watch db.json --routes routes.json --static ./client/build"
+    "start": "json-server --watch db.json --routes routes.json --static ./client/build --port 8080"
   },
   "repository": {
     "type": "git",
